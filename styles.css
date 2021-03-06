@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 ;
+
+}
+::placeholder{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+    background-color: rgba(0, 255, 255, 0.11);
+}
+.container {
+    width: 80%;
+    margin:20px auto;
+}
+.header{
+    text-align: center;
+}
+.header h2{
+    color:rgb(4, 156, 156);
+}
+.write-note{
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.write-note textarea{
+    margin:10px;
+}
+
+input,
+textarea{
+    border:none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+#note-header{
+    width: 30%;
+    margin:10px auto;
+}
+
+.btn{
+    margin:10px auto;
+    padding: 10px 0px;
+    width: 100px;
+    border:none;
+    outline: none;
+    background-color: rgb(4, 156, 156);
+    color:#fff;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.delete-note{
+    cursor: pointer;
+    position: absolute;
+    display: inline-block;
+    top:3px;
+    right:5px;
+    color:rgb(4, 156, 156);
+
+}
+.note-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    margin:0 auto;
+}
+.show-note{
+    position: relative;
+    margin:10px;
+    display: inline-block;
+    margin-top:20px;
+    border:1px solid rgb(192, 192, 192);
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    width:25%;
+}
+.note-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 105px;
+    width: auto;
+    margin:10px 0px auto ;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.show-note:nth-child(odd){
+    flex-grow: 2;
+}
+
