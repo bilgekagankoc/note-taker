@@ -18,7 +18,7 @@ function noteTaker() {
 
 }
 noteTaker.prototype.addUI = function (header, text) {
-    noteContainer.innerHTML += `<div class="show-note">
+     var createNote = `<div class="show-note">
     <div class="note-header">
         <span>
             <h4>${header}</4>
@@ -34,6 +34,7 @@ noteTaker.prototype.addUI = function (header, text) {
                     <i class="ion-close-round delete-note"></i>
     </div>
 </div>`
+    noteContainer.insertAdjacentHTML("afterbegin", createNote);
 
 }
 
