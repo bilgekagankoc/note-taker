@@ -1,5 +1,3 @@
-
-
 const noteHeader = document.querySelector("#note-header");
 const textBox = document.querySelector("#text-box");
 const addNoteButton = document.querySelector(".add-note");
@@ -18,7 +16,7 @@ function noteTaker() {
 
 }
 noteTaker.prototype.addUI = function (header, text) {
-     var createNote = `<div class="show-note">
+    var createNote = `<div class="show-note">
     <div class="note-header">
         <span>
             <h4>${header}</4>
@@ -28,7 +26,7 @@ noteTaker.prototype.addUI = function (header, text) {
         ${text}
     </div>
     <div class="note-detail">
-        <button type="button" class="btn note-detail">View Detail</button>
+        <button type="button" class="btn btn-detail">View Detail</button>
     </div>
     <div class="delete-note">
                     <i class="ion-close-round delete-note"></i>
@@ -92,4 +90,34 @@ noteContainer.addEventListener("click", function (e) {
         getLocalStorage.removeLocalStorage(headerNote, textNote);
         e.target.parentElement.parentElement.remove();
     }
+    else if (e.target.className == "btn btn-detail") {
+
+        getDetail(e.target.parentElement.previousElementSibling.previousElementSibling.textContent.trim(), e.target.parentElement.previousElementSibling.textContent.trim())
+    }
+    else if (e.target.className == "ion-close-round close-detail") {
+        document.querySelector(".show-note").classList.remove("active");
+        console.log("asdasd");
+    }
 })
+document.querySelector("#detail").addEventListener("click", (e) => {
+    if (e.target.className == "ion-close-round close-detail") {
+        document.querySelector(".show-note").classList.remove("active");
+    }
+})
+function getDetail(header, content) {
+
+    document.querySelector("#detail").innerHTML = `<div class="show-note">
+    <div class="note">
+        <span>
+            <h4>${header}</4>
+        </span>
+    </div>
+    <div class="note">
+        ${content}
+    </div>
+    <div class="delete-note">
+        <i class="ion-close-round close-detail"></i>
+    </div>
+</div>`
+    document.querySelector(".show-note").classList.add("active");
+}
