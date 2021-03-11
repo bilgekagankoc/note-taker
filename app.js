@@ -29,7 +29,7 @@ noteTaker.prototype.addUI = function (header, text) {
         <button type="button" class="btn btn-detail">View Detail</button>
     </div>
     <div class="delete-note">
-                    <i class="ion-close-round delete-note"></i>
+                    <i>&times;</i>
     </div>
 </div>`
     noteContainer.insertAdjacentHTML("afterbegin", createNote);

@@ -69,6 +69,10 @@ textarea{
     color:rgb(4, 156, 156);
 
 }
+.delete-note i {
+    font-style: normal;
+    font-size:25px;
+}
 .note-container{
     display: flex;
     flex-wrap: wrap;
@@ -128,3 +132,4 @@ textarea{
     transform: translate(-50%,-50%) scale(1);
     
 }
+
