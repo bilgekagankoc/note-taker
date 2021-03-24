@@ -29,7 +29,7 @@ noteTaker.prototype.addUI = function (header, text) {
         <button type="button" class="btn btn-detail">View Detail</button>
     </div>
     <div class="delete-note">
-                    <i>&times;</i>
+                    <i class="delete-note">&times;</i>
     </div>
 </div>`
     noteContainer.insertAdjacentHTML("afterbegin", createNote);
@@ -84,11 +84,13 @@ addNoteButton.addEventListener("click", function () {
 })
 //Remove note
 noteContainer.addEventListener("click", function (e) {
-    if (e.target.className == "ion-close-round delete-note") {
+    console.log(e.target.className);
+    if (e.target.className == "delete-note") {
         var textNote = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
         var headerNote = e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
         getLocalStorage.removeLocalStorage(headerNote, textNote);
         e.target.parentElement.parentElement.remove();
+        console.log("test");
     }
     else if (e.target.className == "btn btn-detail") {
 
